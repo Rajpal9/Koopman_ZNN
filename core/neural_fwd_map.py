@@ -114,7 +114,7 @@ class map_Net(nn.Module):
         n = self.map_net_params['input_dim'] #number of angles
         m = self.map_net_params['output_dim'] #x and y position of end effector
         n_traj_train = xs_map_train.shape[0]
-        n_traj_val = int(0.25*n_traj_train)
+        n_traj_val = xs_map_val.shape[0]
         n_data_pts_train = n_traj_train*xs_map_train.shape[1]
         n_data_pts_val = n_traj_val*xs_map_train.shape[1]
 
