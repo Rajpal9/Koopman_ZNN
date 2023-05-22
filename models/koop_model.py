@@ -20,6 +20,7 @@ def model_matricies(file):
 def lift(x,model_koop_dnn, params):
     first_obs_const = params['first_obs_const']
     override_C = params['override_C']
+    n = params['state_dim']
     if first_obs_const == 1:
         if override_C:
             Z = np.concatenate((np.ones((1,)),x,model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy()))
@@ -31,3 +32,22 @@ def lift(x,model_koop_dnn, params):
         else:
             Z = (model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy())
     return Z
+
+
+def lift_delay(x,model_koop_dnn, params):
+    first_obs_const = params['first_obs_const']
+    override_C = params['override_C']
+    n = params['state_dim']
+    if first_obs_const == 1:
+        if override_C:
+            Z = np.concatenate((np.ones((1,)),x[-n:],model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy()))
+        else:
+            Z = np.concatenate((np.ones((1,)),model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy()))
+    else:
+        if override_C:
+            Z = np.concatenate((x[-n:],model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy()))
+        else:
+            Z = (model_koop_dnn.net.encode_forward_(torch.from_numpy(x).float()).detach().numpy())
+    return Z
+
+
