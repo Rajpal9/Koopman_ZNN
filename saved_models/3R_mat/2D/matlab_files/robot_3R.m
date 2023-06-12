@@ -38,7 +38,7 @@ dhparams = [ 0 0 0 0;
             l3 0 0 0];
 
 % create robot
-robot = rigidBodyTree
+robot = rigidBodyTree;
 
 % define bodies and Joints
 jnt1 = rigidBodyJoint('jnt1','revolute');
