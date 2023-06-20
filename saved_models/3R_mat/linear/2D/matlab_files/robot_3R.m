@@ -3,28 +3,55 @@ function robot = robot_3R
 clear all
 clc
 
+% % parameter
+% % link length
+% l1 = 0.33; 
+% l2 = 0.33;
+% l3 = 0.33;
+% 
+% % link masses
+% % m1 = 10; %0.1
+% % m2 = 1;
+% % m3 = 2;
+% m1 = 0.1;
+% m2 = 0.1;
+% m3 = 0.1;
+% 
+% % link inertias
+% % I1 = [1 2 5 0 1 1]; %[Ixx Iyy Izz Iyz Ixz Ixy]. %[ 1 1 1 0 0 0]
+% % I2 = [3 1 5 0 0 1];
+% % I3 = [1 2 1 1 0 0];
+% 
+% I1 = [ 1 1 1 0 0 0];
+% I2 = [ 1 1 1 0 0 0];
+% I3 = [ 1 1 1 0 0 0];
+% % COM
+% COM1 = [l1/2 0 0]; % [x y z] in body frame
+% COM2 = [l2/2 0 0]; % [x y z] in body frame
+% COM3 = [l3/2 0 0]; % [x y z] in body frame
 % parameter
+
 % link length
-l1 = 0.33; 
-l2 = 0.33;
-l3 = 0.33;
+l1 = 0.40; 
+l2 = 0.40;
+l3 = 0.40;
 
 % link masses
 % m1 = 10; %0.1
 % m2 = 1;
 % m3 = 2;
-m1 = 0.1;
-m2 = 0.1;
-m3 = 0.1;
+m1 = 1;
+m2 = 1;
+m3 = 1;
 
 % link inertias
 % I1 = [1 2 5 0 1 1]; %[Ixx Iyy Izz Iyz Ixz Ixy]. %[ 1 1 1 0 0 0]
 % I2 = [3 1 5 0 0 1];
 % I3 = [1 2 1 1 0 0];
 
-I1 = [ 1 1 1 0 0 0];
-I2 = [ 1 1 1 0 0 0];
-I3 = [ 1 1 1 0 0 0];
+I1 = [ (m1*l1^2)/12 (m1*l1^2)/12 0 0 0 0];
+I2 = [ (m2*l2^2)/12 (m2*l2^2)/12 0 0 0 0];
+I3 = [ (m3*l3^2)/12 (m3*l3^2)/12 0 0 0 0];
 % COM
 COM1 = [l1/2 0 0]; % [x y z] in body frame
 COM2 = [l2/2 0 0]; % [x y z] in body frame
