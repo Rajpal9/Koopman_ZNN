@@ -201,7 +201,7 @@ def dynamics_3R_data_gen(dt,num_traj,num_snaps,num_states,num_inputs, robot_pars
         for j in range(num_snaps):
 
             # inputs
-            U[i,j,:] = 1*(2*np.random.rand(1,1,3)-1)
+            U[i,j,:] = 0.1*(2*np.random.rand(1,1,3)-1)
 
             # theta evolution
             X[i,j+1,0:3], X[i,j+1,3:6] = dynamics_3R(dt, U[i,j,:], X[i,j,0:3],  X[i,j,3:6], robot_pars)
