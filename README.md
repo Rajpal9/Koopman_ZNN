@@ -1,5 +1,5 @@
 # Koopman_ZNN
-This repository contains the code for bilinear model for serial manipulators and the corresponding ZNN controller developed for the purpose of trajectory tracking with the aforementioned models. 
+This repository contains the code for bilinear model for serial manipulators and the corresponding ZNN controller developed for the purpose of trajectory tracking with the aforementioned models described in the paper titled "**Real-Time Constrained Tracking Control of Redundant Manipulators Using a Koopman-Zeroing Neural Network Framework**". 
 The full paper can be found at https://ieeexplore.ieee.org/document/10380707
 
 If you use this code in an academic context, please cite:
